@@ -1,34 +1,42 @@
-import "./attraction.css"
-import mumbaiPic from "../../Images/Mumbai.jpg"
-import bangalorePic from "../../Images/Bangalore.jpg"
-import goaPic from "../../Images/Goa.jpg"
+import './attraction.css';
+import tripuraPic from '../../Images/sujit places/tripura.jpg';
+import uttarPradeshPic from '../../Images/sujit places/uttar pradesh.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const Attraction4 = () => {
+  const searchTripura = () => {
+    navigate('/Tripura');
+  };
+  const searchUttarPradesh = () => {
+    navigate('/Uttarpradesh');
+  };
+  const navigate = useNavigate();
   return (
     <div className="featured">
-        <div className="featuredItem">
-            <img src={mumbaiPic} alt="" className="featuredImg" />
-            <div className="featuredTitle">
-                <h1>Mumbai</h1>
-                <h2>123 properties</h2>
-            </div>
+      <div className="featuredItem">
+        <img
+          src={tripuraPic}
+          alt=""
+          className="featuredImg"
+          onClick={searchTripura}
+        />
+        <div className="featuredTitle">
+          <h1>Tripura</h1>
         </div>
-        <div className="featuredItem">
-            <img src={goaPic} alt="" className="featuredImg" />
-            <div className="featuredTitle">
-                <h1>Goa</h1>
-                <h2>223 properties</h2>
-            </div>
+      </div>
+      <div className="featuredItem">
+        <img
+          src={uttarPradeshPic}
+          alt=""
+          className="featuredImg"
+          onClick={searchUttarPradesh}
+        />
+        <div className="featuredTitle">
+          <h1>Uttar Pradesh</h1>
         </div>
-        <div className="featuredItem">
-            <img src={bangalorePic} alt="" className="featuredImg" />
-            <div className="featuredTitle">
-                <h1>Bangalore</h1>
-                <h2>323 properties</h2>
-            </div>
-        </div>
-    </div> 
-  )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Attraction4
+export default Attraction4;

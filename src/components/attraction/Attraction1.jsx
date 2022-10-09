@@ -1,34 +1,57 @@
-import "./attraction.css"
-import mumbaiPic from "../../Images/Mumbai.jpg"
-import bangalorePic from "../../Images/Bangalore.jpg"
-import goaPic from "../../Images/Goa.jpg"
+import './attraction.css';
+import gujaratPic from '../../Images/sujit places/gujarat.jpg';
+import himachalPradeshPic from '../../Images/sujit places/himachal pradesh.jpg';
+import karnatakaPic from '../../Images/sujit places/karnataka.webp';
+import { useNavigate } from 'react-router-dom';
 
 const Attraction1 = () => {
+  const searchGujarat = () => {
+    navigate('/Gujarat');
+  };
+  const searchHimachalPradesh = () => {
+    navigate('/HimachalPradesh');
+  };
+  const searchKarnataka = () => {
+    navigate('/Karnataka');
+  };
+  const navigate = useNavigate();
   return (
     <div className="featured">
-        <div className="featuredItem">
-            <img src={mumbaiPic} alt="" className="featuredImg" />
-            <div className="featuredTitle">
-                <h1>Mumbai</h1>
-                <h2>123 properties</h2>
-            </div>
+      <div className="featuredItem">
+        <img
+          src={gujaratPic}
+          alt=""
+          className="featuredImg"
+          onClick={searchGujarat}
+        />
+        <div className="featuredTitle">
+          <h1>Gujarat</h1>
         </div>
-        <div className="featuredItem">
-            <img src={goaPic} alt="" className="featuredImg" />
-            <div className="featuredTitle">
-                <h1>Goa</h1>
-                <h2>223 properties</h2>
-            </div>
+      </div>
+      <div className="featuredItem">
+        <img
+          src={himachalPradeshPic}
+          alt=""
+          className="featuredImg"
+          onClick={searchHimachalPradesh}
+        />
+        <div className="featuredTitle">
+          <h1>Himachal Pradesh</h1>
         </div>
-        <div className="featuredItem">
-            <img src={bangalorePic} alt="" className="featuredImg" />
-            <div className="featuredTitle">
-                <h1>Bangalore</h1>
-                <h2>323 properties</h2>
-            </div>
+      </div>
+      <div className="featuredItem">
+        <img
+          src={karnatakaPic}
+          alt=""
+          className="featuredImg"
+          onClick={searchKarnataka}
+        />
+        <div className="featuredTitle">
+          <h1>Karnataka</h1>
         </div>
-    </div>  
-  )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Attraction1
+export default Attraction1;

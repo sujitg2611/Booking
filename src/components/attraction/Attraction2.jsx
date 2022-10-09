@@ -1,34 +1,57 @@
-import "./attraction.css"
-import mumbaiPic from "../../Images/Mumbai.jpg"
-import bangalorePic from "../../Images/Bangalore.jpg"
-import goaPic from "../../Images/Goa.jpg"
+import './attraction.css';
+import maharashtraPic from '../../Images/sujit places/maharashtra.jpg';
+import manipurPic from '../../Images/sujit places/manipur.jpg';
+import nagalandPic from '../../Images/sujit places/nagaland.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const Attraction2 = () => {
+  const searchMaharashtra = () => {
+    navigate('/Maharashtra');
+  };
+  const searchManipur = () => {
+    navigate('/Manipur');
+  };
+  const searchNagaland = () => {
+    navigate('/Nagaland');
+  };
+  const navigate = useNavigate();
   return (
     <div className="featured">
-        <div className="featuredItem">
-            <img src={mumbaiPic} alt="" className="featuredImg" />
-            <div className="featuredTitle">
-                <h1>Mumbai</h1>
-                <h2>123 properties</h2>
-            </div>
+      <div className="featuredItem">
+        <img
+          src={maharashtraPic}
+          alt=""
+          className="featuredImg"
+          onClick={searchMaharashtra}
+        />
+        <div className="featuredTitle">
+          <h1>Maharashtra</h1>
         </div>
-        <div className="featuredItem">
-            <img src={goaPic} alt="" className="featuredImg" />
-            <div className="featuredTitle">
-                <h1>Goa</h1>
-                <h2>223 properties</h2>
-            </div>
+      </div>
+      <div className="featuredItem">
+        <img
+          src={manipurPic}
+          alt=""
+          className="featuredImg"
+          onClick={searchManipur}
+        />
+        <div className="featuredTitle">
+          <h1>Manipur</h1>
         </div>
-        <div className="featuredItem">
-            <img src={bangalorePic} alt="" className="featuredImg" />
-            <div className="featuredTitle">
-                <h1>Bangalore</h1>
-                <h2>323 properties</h2>
-            </div>
+      </div>
+      <div className="featuredItem">
+        <img
+          src={nagalandPic}
+          alt=""
+          className="featuredImg"
+          onClick={searchNagaland}
+        />
+        <div className="featuredTitle">
+          <h1>Nagaland</h1>
         </div>
-    </div> 
-  )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Attraction2
+export default Attraction2;
